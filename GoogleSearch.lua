@@ -8,9 +8,6 @@ settings.AutoSearch = GetSetting("AutoSearch");
 
 local interfaceMngr = nil;
 local googleSearchForm = {};
-googleSearchForm.Form = nil;
-googleSearchForm.Browser = nil;
-googleSearchForm.RibbonPage = nil;
 
 require "Atlas.AtlasHelpers";
 
@@ -18,13 +15,14 @@ function Init()
 	interfaceMngr = GetInterfaceManager();
 	
 	-- Create a form
-	googleSearchForm.Form = interfaceMngr:CreateForm("Google Search", "Script");
+	googleSearchForm.Form = interfaceMngr:CreateForm("Google Search", "Google Search");
 	
 	-- Add a browser
-	googleSearchForm.Browser = googleSearchForm.Form:CreateBrowser("Google Search", "Google Search Browser", "Google Search");
+	googleSearchForm.Browser = googleSearchForm.Form:CreateBrowser("Google Search", "Google Search Browser", "Google Search", "Chromium");
 	
 	-- Hide the text label
 	googleSearchForm.Browser.TextVisible = false;
+	googleSearchForm.Browser:CollapseTextPlaceholder();
 	
 	-- Since we didn't create a ribbon explicitly before creating our browser, it will have created one using the name we passed the CreateBrowser method.  We can retrieve that one and add our buttons to it.
 	googleSearchForm.RibbonPage = googleSearchForm.Form:GetRibbonPage("Google Search");
@@ -34,7 +32,7 @@ function Init()
 	
 	-- After we add all of our buttons and form elements, we can show the form.
 	googleSearchForm.Form:Show();
-	
+
 	-- Search when opened if autoSearch is true
 	if settings.AutoSearch then
 		Search();
