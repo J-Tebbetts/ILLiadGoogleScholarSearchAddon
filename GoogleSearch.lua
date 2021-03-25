@@ -3,8 +3,14 @@
 -- GoogleSearch.lua does a generic Google search for the LoanTitle for loans and the PhotoArticleTitle for articles.
 -- autoSearch (boolean) determines whether the search is performed automatically when a request is opened or not.
 
+-- Load the .NET System Assembly
+luanet.load_assembly("System");
+Types = {};
+Types["Process"] = luanet.import_type("System.Diagnostics.Process");
+
 local settings = {};
 settings.AutoSearch = GetSetting("AutoSearch");
+
 
 local interfaceMngr = nil;
 local googleSearchForm = {};
@@ -29,7 +35,9 @@ function Init()
 	
 	-- Create the search button
 	googleSearchForm.RibbonPage:CreateButton("Search", GetClientImage("Search32"), "Search", "Google");
+	googleSearchForm.RibbonPage:CreateButton("Open New Browser", GetClientImage("Web32"), "OpenInDefaultBrowser", "Utility");
 	
+
 	-- After we add all of our buttons and form elements, we can show the form.
 	googleSearchForm.Form:Show();
 
@@ -51,3 +59,15 @@ function Search()
 	googleSearchForm.Browser:Navigate("http://google.com/search?q=" .. AtlasHelpers.UrlEncode(searchText));
 end
 
+function OpenInDefaultBrowser()
+	local currentUrl = googleSearchForm.Browser.Address;
+	
+	if (currentUrl and currentUrl ~= "")then
+		LogDebug("Opening Browser URL in default browser: " .. currentUrl);
+
+		local process = Types["Process"]();
+		process.StartInfo.FileName = currentUrl;
+		process.StartInfo.UseShellExecute = true;
+		process:Start();
+	end
+end

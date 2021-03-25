@@ -2,6 +2,11 @@
 
 ## Version
 
+
+- 2.1.0:
+
+    - Added support to open the current URL with the default browser
+
 - 2.0.0:
 
     - Added support for chromium-based browser
