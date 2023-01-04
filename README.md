@@ -2,6 +2,8 @@
 
 ## Version
 
+- 2.2.0
+    - Updated addon to use the WebView2 (Edge-based) browser
 
 - 2.1.0:
 
@@ -27,6 +29,10 @@ Visit the [addon documentation](https://atlas-sys.atlassian.net/wiki/spaces/ILLi
 ### Dependencies 
 
 This addon has dependencies:
+
+*    ILLiad 9.3 or above
+
+This addon can be used with earlier versions of ILLiad, but it will display in an IE-based browser instead of WebView2.
 
 *    Atlas Helpers
 
