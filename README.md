@@ -2,6 +2,9 @@
 
 ## Version
 
+- 2.2.1
+    - Added support to fall back to Chromium if WebView2 is unavailable
+
 - 2.2.0
     - Updated addon to use the WebView2 (Edge-based) browser
 
@@ -30,9 +33,10 @@ Visit the [addon documentation](https://atlas-sys.atlassian.net/wiki/spaces/ILLi
 
 This addon has dependencies:
 
-*    ILLiad 9.3 or above
+* ILLiad 9.2 or above
+    * In ILLiad 9.2.4 or above the addon will use the WebView2 embedded browser instead of Chromium
 
-This addon can be used with earlier versions of ILLiad, but it will display in an IE-based browser instead of WebView2.
+This addon can be used with earlier versions of ILLiad, but it will display in an IE-based browser and may not be fully functional.
 
 *    Atlas Helpers
 
