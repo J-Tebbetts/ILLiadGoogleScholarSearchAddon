@@ -24,7 +24,13 @@ function Init()
 	googleSearchForm.Form = interfaceMngr:CreateForm("Google Search", "Google Search");
 	
 	-- Add a browser
-	googleSearchForm.Browser = googleSearchForm.Form:CreateBrowser("Google Search", "Google Search Browser", "Google Search", "WebView2");
+	local browserType;
+	if AddonInfo.Browsers and AddonInfo.Browsers.WebView2 and AddonInfo.Browsers.WebView2 then
+		browserType = "WebView2";
+	else
+		browserType = "Chromium";
+	end
+	googleSearchForm.Browser = googleSearchForm.Form:CreateBrowser("Google Search", "Google Search Browser", "Google Search", browserType);
 	
 	-- Hide the text label
 	googleSearchForm.Browser.TextVisible = false;
