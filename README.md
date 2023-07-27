@@ -1,7 +1,7 @@
 # ILLiad Google Scholar Search Addon
 
 ## Version
-- 2.2.2
+- 2.2.1A
     - Forked from ILLiad Google Search Addon
     - Modified to use Google Scholar instead of Google for search functions.
 
