@@ -2,10 +2,10 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Google Scholar Search</Name>
   <Author>Originally released by Atlas Systems, Inc.</Author>
-  <Version>2.2.2</Version>
+  <Version>2.2.1A</Version>
   <Active>True</Active>
   <Type>Addon</Type>
-  <Description>Performs a  Google Scholar search for the LoanTitle for loans and the PhotoArticleTitle for articles.</Description>
+  <Description>Performs a Google Scholar search for the LoanTitle for loans and the PhotoArticleTitle for articles.</Description>
   <Forms>
     <Form>FormRequest</Form>
   </Forms>
