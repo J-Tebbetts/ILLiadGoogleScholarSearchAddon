@@ -1,27 +1,12 @@
-# ILLiad Google Search Addon
+# ILLiad Google Scholar Search Addon
 
 ## Version
-
-- 2.2.1
-    - Added support to fall back to Chromium if WebView2 is unavailable
-
-- 2.2.0
-    - Updated addon to use the WebView2 (Edge-based) browser
-
-- 2.1.0:
-
-    - Added support to open the current URL with the default browser
-
-- 2.0.0:
-
-    - Added support for chromium-based browser
-
-- 1.1:
-
-    - Initial version of addon
+- 2.2.2
+    - Forked from ILLiad Google Search Addon
+    - Modified to use Google Scholar instead of Google for search functions.
 
 ## Summary
-This addon is an ILLiad client addon that performs a generic Google search for the LoanTitle for loans and the PhotoArticleTitle for articles. 
+This addon is an ILLiad client addon that performs a Google Scholar search for the LoanTitle for loans and the PhotoArticleTitle for articles. 
 
 The addon will display on request forms. 
 
